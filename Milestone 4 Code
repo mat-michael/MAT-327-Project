@@ -1,0 +1,19 @@
+# load the Milestone 4 data into the variable RStudioProject
+library(readr)
+Project <- read_csv("MAT 327 Data For R-Studio Project - Sheet1.csv")
+
+#A command to open a new tab with the data to allow easier accessibility
+View(Project) 
+
+#Histogram for School Absenteeism (2013-14)
+hist(Project$"School Absenteeism (2013-14)", xlab = "School Absenteeism (2013-14)", main = "Percentage of School Absenteeism (2013-14)")
+
+#Used https://stackoverflow.com/questions/30378955/change-scale-of-histogram-in-r to set xlim and ylim to change the aesthetics of how data is presented
+#Histogram for Jail Incarceration (2011-16)	
+hist(Project$"Jail Incarceration (2011-16)", xlab = "Jail Incarceration (2011-16)", main = "Percentage of Jail Incarceration (2011-16)", xlim=c(0,20), ylim=c(0,20))
+
+#Histogram for High School Graduation (2015-19)
+hist(Project$"High School Graduation (2015-19)", xlab = "High School Graduation (2015-19)", main = "Percentage of High School Graduation (2015-19)")
+
+#Histogram for Unhealthy Food Access (Ratio of Bodegas to Supermarkets in 2016)
+hist(Project$"Unhealthy Food Access (Ratio of Bodegas to Supermarkets in 2016)", xlab = "Ratio of Bodegas to Supermarkets (2016)", main = "Unhealthy Food Access (Bodegas/Supermarkets)")
