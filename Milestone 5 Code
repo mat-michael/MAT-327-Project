@@ -1,0 +1,18 @@
+#Source: https://michaelminn.net/tutorials/r-summarizing-data/index.html
+Database = read.csv("MAT 327 Data For R-Studio Project - Sheet1.csv", as.is=T)
+Database
+colnames(Database)
+summary(Database)
+
+library(readr)
+#Calling upon the new dataset that is updated to remove certain datapoints that were outliers
+Project <- read_csv("MAT 327 Data For R-Studio Project - Clean.csv")
+
+#The command below gives us the new histogram for the updated data
+
+#Used https://stackoverflow.com/questions/30378955/change-scale-of-histogram-in-r to set xlim and ylim to change the aesthetics of how data is presented
+#Histogram for Jail Incarceration (2011-16) with the updated dataset
+hist(Project$"Jail Incarceration (2011-16)", xlab = "Jail Incarceration (2011-16)", main = "Percentage of Jail Incarceration (2011-16)", xlim=c(0,15), ylim=c(0,20))
+
+#Histogram for Unhealthy Food Access (Ratio of Bodegas to Supermarkets in 2016)
+hist(Project$"Unhealthy Food Access (Ratio of Bodegas to Supermarkets in 2016)", xlab = "Ratio of Bodegas to Supermarkets (2016)", main = "Unhealthy Food Access (Bodegas/Supermarkets)")
