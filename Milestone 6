@@ -1,0 +1,21 @@
+library(readr)
+#Calling upon the new dataset that is updated to remove certain datapoints that were outliers
+Project <- read_csv("MAT 327 Data For R-Studio Project - Clean.csv")
+
+#Shows the mean and median for all the variables
+summary(Project)
+
+#Shows the variance for all the variables, excluding the ones with NA
+#Source: https://sdsclub.com/how-to-find-variance-in-r-examples-included/#:~:text=var(data)*(n%2D1)%2Fn&text=So%2C%20we%20can%20use%20the,the%20following%20when%20calculated%20manually. for the sapply function
+#Source: https://www.geeksforgeeks.org/how-to-use-na-rm-in-r/#:~:text=R%20Programming%20Language.-,na.,to%20remove%20the%20NA%20values. for the na.rm (removes all the NA inputs)
+sapply(Project,var,na.rm=TRUE)
+sapply(Project,sd,na.rm=TRUE)
+
+#The following code below is used to verify the results from summary and sapply
+mean(Project$"School Absenteeism (2013-14)")
+median(Project$"School Absenteeism (2013-14)")
+var(Project$"School Absenteeism (2013-14)")
+sd(Project$"School Absenteeism (2013-14)")
+
+#Use the same syntax even if the column has blank elements just add na.rm=TRUE
+sd(Project$"Jail Incarceration (2011-16)",na.rm=TRUE)
