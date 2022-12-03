@@ -1,0 +1,16 @@
+library(readr)
+#Calling upon the new dataset that is updated to remove certain datapoints that were outliers
+Milestone7 <- read_csv("MAT 327 Data For R-Studio Project - Clean.csv")
+
+names(Milestone7)
+help(plot)
+
+input1 <- Milestone7[,c('School Absenteeism (2013-14)','High School Graduation (2015-19)')]
+cor(input1)
+
+plot(input1,
+     main = "Graduation (2015-19) v. School Absenteeism (2013-14)",
+     xlab = "School Absenteeism (2013-14)",
+     ylab = "High School Graduation (2015-19)",
+     xlim=c(0,45),
+     ylim=c(55,100))
