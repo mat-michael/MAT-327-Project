@@ -1,0 +1,22 @@
+library(readr)
+#Calling upon the new dataset that is updated to remove certain datapoints that were outliers
+Milestone9 <- read_csv("MAT 327 Data For R-Studio Project - Clean.csv")
+summary(Milestone9)
+
+#the z-value for the 95% confidence interval
+zvalue <- -qnorm(0.025)
+sqrtn <- sqrt(59)
+
+#The following command is in relation to High School Graduation
+xbar1 <- 19.08
+sd1 <- 9.357352
+#Calculation for the 95% CI for High School Graduation
+xbar1 - (sd1/sqrtn)*zvalue
+xbar1 + (sd1/sqrtn)*zvalue
+
+#The following command is in relation to School Absenteeism
+xbar2 <- 81.71
+sd2 <- 9.2126
+#Calculation for the 95% CI for School Absenteeism
+xbar2 - (sd2/sqrtn)*zvalue
+xbar2 + (sd2/sqrtn)*zvalue
