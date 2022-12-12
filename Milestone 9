@@ -1,0 +1,18 @@
+#Used https://www.youtube.com/watch?v=yFdfEr6tX7M&ab_channel=Dr.SarveshwarInani to write code
+#Used https://www.youtube.com/watch?v=aeWR98OVMpA&ab_channel=DavidJohnsonIII
+
+library(readr)
+#Calling upon the new dataset that is updated to remove certain datapoints that were outliers
+Milestone8 <- read_csv("MAT 327 Data For R-Studio Project - Sheet1.csv")
+
+#makes the scatterplot for High School Graduation (2015-19) v. School Absenteeism (2013-14)
+input1 <- Milestone8[,c('School Absenteeism (2013-14)','High School Graduation (2015-19)')]
+plot(input1,
+     main = "Graduation (2015-19) v. School Absenteeism (2013-14)",
+     xlab = "School Absenteeism (2013-14)",
+     ylab = "High School Graduation (2015-19)",
+     xlim=c(0,45),
+     ylim=c(55,100))
+
+#Line of Best Fit 0.274*x+73.8
+abline(a=73.8, b=0.274, col="Blue", lwd=0.5)
